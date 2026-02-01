@@ -26,7 +26,7 @@ def counting_sort(input):
 
 
 if __name__ == "__main__":
-    max_value = 100
+    max_value = 1000
     input = [random.randint(0, max_value) for _ in range(max_value)]
     print(f"Input list: {input}")
     output = counting_sort(input)
