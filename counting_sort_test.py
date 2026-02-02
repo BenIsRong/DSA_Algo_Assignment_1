@@ -10,9 +10,11 @@ def counting_sort(input):
 
     count = [0] * (max_val + 1)
 
+    #get count of values
     for value in input:
         count[value] += 1
 
+    #get sums of counts until idx
     for idx in range(1, max_val + 1):
         count[idx] += count[idx - 1]
 
@@ -25,7 +27,10 @@ def counting_sort(input):
 
     return output
 
+#lists for the sorted values
 normal_counting_sort_correct = []
+n_squared_counting_sort_correct = []
+
 def normal_counting_sort(max_value):
     input = [random.randint(0, max_value) for _ in range(max_value)]
     print(f"Input list: {input}")
@@ -33,7 +38,6 @@ def normal_counting_sort(max_value):
     print(f"Output list: {output}")
     normal_counting_sort_correct.append({"input": input, "output": output})
 
-n_squared_counting_sort_correct = []
 def n_squared_counting_sort(max_value):
     input = [random.randint(0, max_value * max_value) for _ in range(max_value)]
     print(f"Input list: {input}")
@@ -41,6 +45,7 @@ def n_squared_counting_sort(max_value):
     print(f"Output list: {output}")
     n_squared_counting_sort_correct.append({"input": input, "output": output})
 
+#test if sorted values correctly
 def test_correctness(list_of_tests):
     correct = 0
     for test in list_of_tests:

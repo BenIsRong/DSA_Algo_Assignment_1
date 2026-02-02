@@ -9,9 +9,11 @@ def counting_sort(input):
 
     count = [0] * (max_val + 1)
 
+    #get count of values
     for value in input:
         count[value] += 1
 
+    #get sums of counts until idx
     for idx in range(1, max_val + 1):
         count[idx] += count[idx - 1]
 
